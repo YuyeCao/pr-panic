@@ -320,6 +320,11 @@ button { font: inherit; }
 .tendency-row > span { color: #aaa5ac; font-size: .8rem; }
 .tendency-row > div { overflow: hidden; height: 7px; border-radius: 999px; background: rgba(255,255,255,.07); }
 .tendency-row i { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--violet), var(--pink)); transform-origin: left; animation: grow .8s ease both; }
+.result-tendency-section { margin: 10px 0 80px; }
+.result-tendency-section .section-heading { margin-bottom: 20px; }
+.result-tendency-section .section-heading h3 { font-size: clamp(1.35rem, 4vw, 2.1rem); }
+.result-tendency-section .section-heading small { display: block; margin-top: 6px; }
+.result-tendency-section .tendency-bars { gap: 10px; }
 .classic-moment { position: relative; margin: 95px 0; padding: 32px 0 32px 24px; border-left: 4px solid var(--pink); }
 .classic-moment time { display: block; margin: 16px 0 4px; color: var(--gold); font-size: 1.25rem; font-weight: 850; }
 .classic-moment > p { max-width: 680px; color: #aaa5ac; }.classic-moment h3 { margin: 22px 0 8px; font-size: clamp(1.4rem, 5vw, 2.3rem); }

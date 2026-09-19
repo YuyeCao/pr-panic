@@ -657,6 +657,14 @@
       };
 
       const tendencyLabelsV2 = ["主动沟通", "事实核实", "谨慎留白", "边界意识", "证据控场", "敢于决断", "多方协调"];
+      const tendencyDisplayMapV2 = [
+        ["主动沟通", "主动沟通"],
+        ["谨慎留白", "谨慎留白"],
+        ["边界意识", "边界意识"],
+        ["事实核实", "事实核查"],
+        ["多方协调", "多方协调"],
+        ["敢于决断", "窗口决断"]
+      ];
 
       function hudMarkupV2() {
         const shortLabels = { heat: "🔥 舆论", facts: "🔎 掌握信息", open: "🔓 公开程度", business: "💼 商务压力" };
@@ -874,6 +882,11 @@
         return tendencyLabelsV2.map((label) => ({ label, percent: Math.round((totals[label] / max) * 100) }));
       }
 
+      function getDisplayedTendenciesV2(history) {
+        const tendencies = Object.fromEntries(calculateTendenciesV2(history).map((item) => [item.label, item.percent]));
+        return tendencyDisplayMapV2.map(([source, label]) => ({ label, percent: tendencies[source] }));
+      }
+
       function findClassicMomentV2(history, personaKey) {
         const profile = personas[personaKey].profile;
         return history.slice().sort((a, b) => {
@@ -938,6 +951,7 @@
         const outcomeResult = calculateOutcomeV2(game.history, game.status);
         const outcome = outcomeDetailsV2[outcomeResult.key];
         const outcomeCopy = outcomePresentationV2[outcomeResult.key];
+        const tendencies = getDisplayedTendenciesV2(game.history);
         const classic = findClassicMomentV2(game.history, personaKey);
         const classicCopy = decisionCopyV2[classic.choice.id];
         const classicRoom = decisionRoomV3[classic.round];
@@ -949,6 +963,10 @@
                 <p class="result-kicker">本局你的决策更倾向于——</p><h2>「${persona.name}」</h2>
                 <div class="persona-analysis">${persona.paragraphs.map((paragraph) => `<p>${paragraph}</p>`).join("")}</div>
                 <div class="keyword-row">${persona.keywords.map((word) => `<span>${word}</span>`).join("")}</div>
+              </section>
+              <section class="tendency-section result-tendency-section">
+                <div class="section-heading"><div><h3>你这一晚的 PR 决策倾向</h3><small>只是本局选择分布，不是能力评分。</small></div></div>
+                <div class="tendency-bars">${tendencies.map((item) => `<div class="tendency-row"><span>${item.label}</span><div><i style="width:${item.percent}%"></i></div></div>`).join("")}</div>
               </section>
               <section class="outcome-reveal">
                 <p class="result-kicker">当前危机局面可能更接近——</p><h2>「${outcome[0]}」</h2>
