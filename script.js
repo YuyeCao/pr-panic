@@ -484,22 +484,116 @@
         boundary: ["边界守住了，猜测还在", "你没有交出完整私人生活，网友也没有停止拼图。", "工作室没有公开具体日期和女生身份，只回应了当前有必要说明的部分。", "当事人的私人空间没有被进一步推上热搜。", "没有被回答的地方，仍由媒体和网友自行解释。", "官方没有新增私人信息，但各版本“民间时间线”仍在流传。", "讨论可能因为缺少新材料逐渐散去，也可能在下一张旧照片出现时重新升温。"]
       };
 
-      const tendencyDescriptionsV2 = {
-        cautious: "本局更重视先核实、再表态，并为尚未确认的信息保留调整空间。",
-        communicator: "本局更重视尽早进入沟通，让正式回应持续出现在舆论现场。",
-        boundary: "本局更重视回应必要问题，同时控制私人信息的公开范围。",
-        evidence: "本局更重视用可核对的事实和材料支撑准备发布的结论。",
-        coordinator: "本局更重视区分公众、媒体和品牌需求，分别安排沟通方式。",
-        decisive: "本局更重视抓住回应窗口，在关键节点尽快给出明确处理。"
+      const tendencyPresentationV2 = {
+        cautious: {
+          name: "稳住再说派",
+          paragraphs: [
+            "如果你坐在娱乐公司 PR 的位置上，信息没齐之前，你大概率不会急着把话说死。比起抢那十分钟，你更在意今天发出去的话，明天还能不能接得住。",
+            "你会先核实事实，再决定回应口径说到哪一步。毕竟公关最怕的不是晚十分钟，是十分钟后被自己的声明打脸。",
+            "放到现实生活里，你可能也是遇到大事先观察一下、把情况想清楚，再决定要不要出手的人。"
+          ],
+          keywords: ["核实优先", "口径留白", "避免过早定性"]
+        },
+        communicator: {
+          name: "先手沟通派",
+          paragraphs: [
+            "危机可以发生，但工作室不能在最需要说话的时候消失。你的处理方式更偏向尽快打开沟通窗口，把麦克风从营销号手里拿回来。",
+            "你不一定什么都公开，但会主动联系相关方、回应公众，也会让媒体和合作方知道事情正在被处理。先让正式信息进场，再慢慢补齐细节。",
+            "放到现实生活里，你可能也不太喜欢冷处理。出了问题，与其让大家各自脑补，不如找个机会把话讲开。"
+          ],
+          keywords: ["主动回应", "抢回话筒", "沟通控场"]
+        },
+        boundary: {
+          name: "边界感选手",
+          paragraphs: [
+            "你愿意回应争议，但不觉得回应就等于交出全部私生活。公众需要知道的事实、大家只是好奇的细节，在你这里不是一回事。",
+            "你会尽量坚持最低必要公开：核心问题可以回答，品牌需要的材料可以单独核验，但私人日期和身份没必要顺手送上热搜。",
+            "放到现实生活里，你可能也愿意解释，但不太喜欢被无限追问，更不喜欢为了自证把所有边界都拆掉。"
+          ],
+          keywords: ["最低必要公开", "隐私边界", "分层回应"]
+        },
+        evidence: {
+          name: "证据上桌派",
+          paragraphs: [
+            "偷拍视频、前任发文、营销号推测一起冲上来时，你的第一反应不是跟着站队，而是先问：哪些已经确认，哪些只是大家猜得很投入？",
+            "别人已经讨论到谁渣谁了，你还在问：等一下，这张照片有日期吗？你更愿意用事实核查和证据回应，切断那些跑得比证据快的结论。",
+            "放到现实生活里，你可能也是遇到争议先翻聊天记录、对时间线、看原话的人。"
+          ],
+          keywords: ["事实核查", "证据回应", "切断过度推断"]
+        },
+        coordinator: {
+          name: "多方稳场派",
+          paragraphs: [
+            "你很清楚，网友、媒体、品牌和当事人需要的并不是同一份答案。想靠一条万能声明解决所有问题，通常只会让问题一起爆。",
+            "你的处理更偏向分层沟通：公众回应公众关心的，品牌拿到风险核验需要的，媒体问题单独处理。核心目标很简单——别让一个舆情问题同时炸掉四段关系。",
+            "放到现实生活里，你可能也比较会协调。别人还在看两个人吵架，你已经开始想谁去解释、谁先别说话。"
+          ],
+          keywords: ["利益相关方", "分层沟通", "多线控场"]
+        },
+        decisive: {
+          name: "窗口决断派",
+          paragraphs: [
+            "你知道信息永远可能再多一点，但舆论不会一直等。如果某种猜测快要变成默认事实，你更愿意在关键节点拍板，把议题主动权抢回来。",
+            "你的处理更看重舆情窗口和节奏控制。等什么都查清楚了，故事可能已经被别人写完；该回应的时候，就得让正式口径及时进场。",
+            "放到现实生活里，你可能平时也会权衡，但真到了必须做决定的时候，反而比想象中更果断。"
+          ],
+          keywords: ["舆情窗口", "快速决策", "节奏控制"]
+        }
       };
 
-      const tendencyTradeoffsV2 = {
-        cautious: ["事实准确与后续回旋空间", "核实期间的沉默可能被外界自行解读"],
-        communicator: ["正式信息能够较早进入讨论", "连续回应更容易被逐句比较"],
-        boundary: ["当事人的私人边界", "信息留白可能继续被网友补全"],
-        evidence: ["声明能够获得事实支撑", "核对材料需要时间，也可能扩大公开压力"],
-        coordinator: ["不同对象都能获得足够的下一步信息", "公开口径可能显得不够直接"],
-        decisive: ["及时影响舆论与商务安排", "明确结论需要承担更高的后续核验压力"]
+      const outcomePresentationV2 = {
+        questions: {
+          story: "这些处理没有继续给热搜添新柴，但关键问题也没有被完全说透。照这条路走下去，热度可能慢慢退，问号却会留在搜索记录里，等下一张旧图出现时再回来加班。",
+          gainLabel: "你保住了",
+          gain: "没有为了赶回应交出更多私人信息",
+          costLabel: "你留下了",
+          cost: "一个随时可能被重新翻出的问号"
+        },
+        timeline: {
+          story: "你没有把所有私人细节一次性交出去，但几个关键节点给出的信息已经够大家认真核对时间线。于是焦点很可能从“是不是出事了”，变成“等一下，我把这几天重新算一遍”。核心风险有机会被压下去，互联网侦探大概不会立刻下班。",
+          gainLabel: "你保住了",
+          gain: "解释核心争议的空间",
+          costLabel: "你换来了",
+          cost: "全民时间线整理大会"
+        },
+        stable: {
+          story: "几次回应基本接得上，没有出现昨晚说 A、今早突然改成 B 的尴尬场面。局面更可能慢慢稳住，但事实说清楚不等于大家突然不吵了，评论区依然会有人坚持自己的版本。",
+          gainLabel: "你保住了",
+          gain: "工作室口径的可信度",
+          costLabel: "你留下了",
+          cost: "一场不会立刻结束的情绪拉扯"
+        },
+        narrative: {
+          story: "你没有让工作室一直隐身，也在关键位置给出了能被引用的正式回应。照这个节奏，工作室很可能重新拿回麦克风，让营销号不再是现场唯一的编剧。代价是每一句明确表态，都会进入互联网长期存档。",
+          gainLabel: "你抢回了",
+          gain: "事件的主要话筒",
+          costLabel: "你承担了",
+          cost: "以后每句话都要经得起回看"
+        },
+        brand: {
+          story: "你没有为了赶活动时间硬塞一个结论，而是先让品牌停一下、再把事实继续查清。这样能换来处理空间，但品牌一按暂停，网友也会立刻问：是不是事情比想象中更大？",
+          gainLabel: "你换来了",
+          gain: "继续核实和协商的时间",
+          costLabel: "你承担了",
+          cost: "品牌暂停本身带来的新猜测"
+        },
+        boundary: {
+          story: "你回应了最需要回答的部分，也没有顺手公开具体日期、身份和完整私人生活。照这条路走，边界大概率能守住，但空白不会消失——官方不填，网友就会自己拿放大镜补完。",
+          gainLabel: "你守住了",
+          gain: "当事人的私人边界",
+          costLabel: "你留下了",
+          cost: "继续流传的民间版本"
+        }
+      };
+
+      const classicPunchlinesV2 = {
+        "事实核实": "别人已经看到大结局，你还停在第一集检查证据链。",
+        "谨慎留白": "先别押结论，明早的声明还得接得住。",
+        "主动沟通": "瓜刚落地，工作室先别失联。",
+        "边界意识": "该回应的回应，私人的还是私人。",
+        "证据控场": "先把证据摆好，再决定这句话能说多满。",
+        "敢于决断": "窗口只有一次，先把麦克风抢回来。",
+        "多方协调": "一个一个来，别一起炸。"
       };
 
       const outcomePathProfilesV2 = {
@@ -788,21 +882,8 @@
         })[0];
       }
 
-      function formatDecisionPathV2(entries) {
-        return entries.map((entry) => {
-          const title = decisionCopyV2[entry.choice.id][0];
-          const impact = entry.choice.stance.split("；")[0];
-          return `第${entry.round}轮选择「${title}」，留下了“${impact}”`;
-        }).join("；");
-      }
-
       function buildPersonaExplanationV2(history, personaKey) {
-        const profile = personas[personaKey].profile;
-        const keyChoices = history.slice().sort((a, b) => {
-          const score = (entry) => entry.choice.tags.reduce((sum, tag) => sum + (profile[tag] || 0), 0) * ROUND_WEIGHTS[entry.round - 1];
-          return score(b) - score(a) || b.round - a.round;
-        }).slice(0, 2).sort((a, b) => a.round - b.round);
-        return `${formatDecisionPathV2(keyChoices)}。这些本局实际选择反复体现了相关取向，因此整体更偏向「${personaDetailsV2[personaKey][0]}」。`;
+        return tendencyPresentationV2[personaKey].paragraphs.join(" ");
       }
 
       function outcomeChoiceScoreV2(entry, outcomeKey) {
@@ -811,20 +892,6 @@
         const routeScore = profile.routes[entry.choice.route] || 0;
         const finalScore = entry.choice.outcome === outcomeKey ? 6 : 0;
         return tagScore + routeScore + finalScore + entry.round * 0.05;
-      }
-
-      function getOutcomeStatusSummaryV2(outcomeKey, status) {
-        const relevantStatus = {
-          questions: ["facts", "open"],
-          timeline: ["facts", "open"],
-          stable: ["heat", "facts"],
-          narrative: ["heat", "open"],
-          brand: ["business", "facts"],
-          boundary: ["open", "facts"]
-        };
-        const labels = { heat: "舆论温度", facts: "掌握信息", open: "信息公开度", business: "商务压力" };
-        const level = (value) => value >= 65 ? "偏高" : value <= 35 ? "偏低" : "处于中间区间";
-        return relevantStatus[outcomeKey].map((key) => `${labels[key]}${level(status[key])}`).join("、");
       }
 
       function calculateOutcomeV2(history, status) {
@@ -846,57 +913,62 @@
         return { key, scores };
       }
 
-      function buildOutcomeExplanationV2(history, outcomeKey, status) {
-        const ranked = history.slice().sort((a, b) => outcomeChoiceScoreV2(b, outcomeKey) - outcomeChoiceScoreV2(a, outcomeKey));
+      function getOutcomeKeyChoicesV2(history, outcomeKey) {
         const finalEntry = history[history.length - 1];
-        const keyChoices = ranked.slice(0, 3);
-        if (!keyChoices.includes(finalEntry)) keyChoices[2] = finalEntry;
-        keyChoices.sort((a, b) => a.round - b.round);
-        return `${formatDecisionPathV2(keyChoices)}。结合最终${getOutcomeStatusSummaryV2(outcomeKey, status)}，当前局面更可能接近「${outcomeDetailsV2[outcomeKey][0]}」，但仍可能随新信息或各方回应发生变化。`;
+        const earlierEntry = history.slice(0, -1).sort((a, b) => outcomeChoiceScoreV2(b, outcomeKey) - outcomeChoiceScoreV2(a, outcomeKey))[0];
+        return [earlierEntry, finalEntry].filter(Boolean).sort((a, b) => a.round - b.round);
+      }
+
+      function buildOutcomeExplanationV2(history, outcomeKey, status) {
+        const choiceEffects = getOutcomeKeyChoicesV2(history, outcomeKey)
+          .map((entry) => decisionCopyV2[entry.choice.id][3])
+          .join(" ");
+        return `${choiceEffects} ${outcomePresentationV2[outcomeKey].story}`;
+      }
+
+      function getClassicPunchlineV2(entry, personaKey) {
+        const profile = personas[personaKey].profile;
+        const tag = entry.choice.tags.slice().sort((a, b) => (profile[b] || 0) - (profile[a] || 0))[0];
+        return classicPunchlinesV2[tag];
       }
 
       function renderResultsV2() {
         const personaKey = calculatePersonaV2(game.history).key;
-        const persona = personaDetailsV2[personaKey];
+        const persona = tendencyPresentationV2[personaKey];
         const outcomeResult = calculateOutcomeV2(game.history, game.status);
         const outcome = outcomeDetailsV2[outcomeResult.key];
-        const tendencies = calculateTendenciesV2(game.history);
+        const outcomeCopy = outcomePresentationV2[outcomeResult.key];
         const classic = findClassicMomentV2(game.history, personaKey);
         const classicCopy = decisionCopyV2[classic.choice.id];
+        const classicRoom = decisionRoomV3[classic.round];
         app.innerHTML = `
           <section class="screen result-screen">
-            <header class="result-hero"><time>08:59</time><p>本轮决策结束。</p><h1>危机没有标准答案。<br>但你的选择留下了<br><em>非常明显的痕迹。</em></h1></header>
+            <header class="result-hero"><time>08:59</time><p>今晚的最后一条消息发出去了。</p><h1>这一夜结束了。<br>来看看你留下的<br><em>公关手笔。</em></h1></header>
             <main class="result-shell">
+              <section class="persona-reveal">
+                <p class="result-kicker">本局你的决策更倾向于——</p><h2>「${persona.name}」</h2>
+                <div class="persona-analysis">${persona.paragraphs.map((paragraph) => `<p>${paragraph}</p>`).join("")}</div>
+                <div class="keyword-row">${persona.keywords.map((word) => `<span>${word}</span>`).join("")}</div>
+              </section>
               <section class="outcome-reveal">
-                <p class="result-kicker">当前危机局面可能更接近——</p><h2>「${outcome[0]}」</h2><blockquote>${buildOutcomeExplanationV2(game.history, outcomeResult.key, game.status)}</blockquote>
+                <p class="result-kicker">当前危机局面可能更接近——</p><h2>「${outcome[0]}」</h2>
+                <p class="outcome-summary">${buildOutcomeExplanationV2(game.history, outcomeResult.key, game.status)}</p>
                 <div class="outcome-grid outcome-grid-final">
-                  <div><span>当前更可能发生</span><p>${outcome[2]}</p></div>
-                  <div><span>这条路径可能保住</span><p>${outcome[3]}</p></div>
-                  <div><span>这条路径可能付出</span><p>${outcome[4]}</p></div>
-                  <div><span>接下来可能出现</span><p>${outcome[5]}</p></div>
+                  <div><span>${outcomeCopy.gainLabel}</span><p>${outcomeCopy.gain}</p></div>
+                  <div><span>${outcomeCopy.costLabel}</span><p>${outcomeCopy.cost}</p></div>
                 </div>
               </section>
-              <section class="persona-reveal">
-                <p class="result-kicker">本局你的决策更倾向于——</p><h2>「${persona[0]}」</h2><blockquote>${tendencyDescriptionsV2[personaKey]}</blockquote>
-                <p class="persona-analysis">${buildPersonaExplanationV2(game.history, personaKey)}</p><div class="keyword-row">${persona[3].map((word) => `<span>${word}</span>`).join("")}</div>
-              </section>
-              <section class="result-details">
-                <div><span>本局更关注</span><p>${tendencyTradeoffsV2[personaKey][0]}</p></div><div><span>这条路径的代价</span><p>${tendencyTradeoffsV2[personaKey][1]}</p></div>
-                <div><span>判断依据</span><p>四轮选择中与该倾向最相关的实际决策。</p></div><div><span>结果边界</span><p>这是本次模拟的路径解释，不是对玩家本人的固定分类。</p></div>
-              </section>
-              <section class="reality-note"><p class="result-kicker">关于这份结果</p><p>它只描述你在本次模拟中的决策倾向，不代表心理测评、人格诊断或固定结论。</p></section>
-              <section class="tendency-section">
-                <div class="section-heading"><div><h3>你这一晚把力气用在了哪里</h3></div><small>这是倾向，不是能力评分</small></div>
-                <div class="tendency-bars">${tendencies.map((item) => `<div class="tendency-row"><span>${item.label}</span><div><i style="width:${item.percent}%"></i></div></div>`).join("")}</div>
-              </section>
               <section class="classic-moment">
-                <p class="result-kicker">你的经典危机瞬间</p><time>${rounds[classic.round].time}</time>
-                <p>当「${rounds[classic.round].title}」把压力推到桌面上——</p><h3>你选择：${classicCopy[0]}</h3><q>${classicCopy[1]}</q>
-                <p>${classicCopy[3]} 这一步也是本局倾向判断的重要依据。</p>
+                <p class="result-kicker">今夜名场面</p><time>${rounds[classic.round].time} · ${rounds[classic.round].title}</time>
+                <p>${classicRoom[0]}</p>
+                ${classicRoom[2].map((message) => `<p><strong>${message[0]}：</strong>${message[1]}</p>`).join("")}
+                <h3>而你：</h3><q>${classicCopy[1]}</q>
+                <p>${getClassicPunchlineV2(classic, personaKey)}</p>
               </section>
               <footer class="ending">
                 <p>换一种处理方式，<br>你可能得到不同的决策倾向和危机局面。</p>
                 <button class="story-button" id="restart-button">再值一次夜班 <span>↻</span></button>
+                <small>结果仅描述你在本次模拟中的决策倾向和可能局面，不代表固定人格或现实预测。</small>
                 <small>本游戏中的人物、品牌、媒体账号与事件均为虚构，不影射任何真实人物或事件。</small>
               </footer>
             </main>

@@ -324,10 +324,10 @@ button { font: inherit; }
 .classic-moment time { display: block; margin: 16px 0 4px; color: var(--gold); font-size: 1.25rem; font-weight: 850; }
 .classic-moment > p { max-width: 680px; color: #aaa5ac; }.classic-moment h3 { margin: 22px 0 8px; font-size: clamp(1.4rem, 5vw, 2.3rem); }
 .classic-moment q { display: block; max-width: 680px; color: #ddd7dc; quotes: none; }
-.outcome-reveal { margin-top: 0; }
+.outcome-reveal { margin-top: 80px; border-top: 1px solid var(--line); }
 .outcome-reveal h2 { color: var(--gold); }
 .outcome-grid-final { grid-template-columns: 1fr; }
-.persona-reveal { margin-top: 80px; border-top: 1px solid var(--line); }
+.persona-reveal { margin-top: 0; }
 .tomorrow-card { margin: 65px 0 20px; padding: 30px; color: #201d21; background: var(--paper); box-shadow: 12px 14px 0 rgba(255,79,120,.16); transform: rotate(-.5deg); }
 .tomorrow-card time { color: #9b3350; font-size: 1.15rem; font-weight: 900; }.tomorrow-card p { margin: 12px 0 0; font-size: 1.08rem; }
 .future-note { max-width: 720px; padding: 25px 0; }.future-note p { color: #bbb6bb; }
